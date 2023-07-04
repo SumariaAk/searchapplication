@@ -1,6 +1,6 @@
 # Search application 
 
-This is a full stack application that searched the internet for information regarding the topic submitted byt the use.
+This is a full stack application that searches the internet for information regarding the topic submitted by the user.
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ The backend is built using the Serverless Framework and Node.js. It consists of 
 
 ## API Documentation
 
-The API documentation, including the available endpoints and their descriptions, can be found in the [Postman Collection](https://documenter.getpostman.com/view/18012753/2s93z5Ak75#3ccf505a-bf62-44d4-bfd0-b1327f07ed4b) file.
+The API documentation, including the available endpoint and it's description, can be found in the [Postman Collection](https://documenter.getpostman.com/view/18012753/2s93zE3L6e) file.
 
 
 ## GitHub Actions
@@ -61,6 +61,11 @@ API_KEY
 
 ```
 CX
+```
+3. Serverless framework access key from [SERVERLESS_ACCESS_KEY](https://www.serverless.com/framework/docs/guides/cicd/running-in-your-own-cicd)
+
+```
+SERVERLESS_ACCESS_KEY
 ```
 
 ### Variables
