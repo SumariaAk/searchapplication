@@ -21,8 +21,6 @@ module.exports.search = async (event) => {
       }),
     };
   } catch (error) {
-    console.error('Error occurred while performing search:', error);
-
     return {
       statusCode: 500,
       headers: {
