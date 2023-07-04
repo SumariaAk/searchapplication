@@ -1,0 +1,33 @@
+service: search-backend #Service name
+app: ${env:APP_NAME}  # Placeholder for the name of the application
+org: ${env:ORG_NAME}  # Placeholder for the name of the organization
+useDotenv: true # Enable use of .env file
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}  # Specifies the deployment stage (default: 'dev')
+  region: ${opt:region, 'us-east-1'}  # Specifies the AWS region (default: 'us-east-1')
+
+custom:
+  customDomain:
+    domainName: backend-api.auroraaa.me
+    basePath: ""
+    createRoute53Record: true
+    stage: ${opt:stage, 'dev'}  # Specifies the deployment stage (default: 'dev')
+
+plugins:
+  - serverless-dotenv-plugin  # Plugin for loading environment variables from a .env file
+  - serverless-domain-manager  # Plugin for managing custom domains
+
+functions:
+  search:
+    handler: handler.search  # Specifies the handler function for the 'search' function
+    events:
+      - http:
+          path: /search
+          method: post
+          cors: true  # Enables Cross-Origin Resource Sharing (CORS) for the endpoint
+    environment:
+      API_KEY: ${env:API_KEY}  # Sets the value of the 'API_KEY' environment variable from the .env file
+      CX: ${env:CX}  # Sets the value of the 'CX' environment variable from the .env file
