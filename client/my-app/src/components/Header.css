@@ -24,3 +24,9 @@
     color: #03396c;
   }
   
+  .header-name {
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 5px;
+  }
