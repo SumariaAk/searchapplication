@@ -3,11 +3,12 @@ import clipboardCopy from 'clipboard-copy';
 import './Result.css'
 
 function Result({results, setResults}) {
+
     const handleCopyToClipboard = (text, index) => {
-        clipboardCopy(text);
+        clipboardCopy(text); // Copy the text to the clipboard
         setResults(prevResults => {
             const updatedResults = [...prevResults];
-            updatedResults[index].copied = true;
+            updatedResults[index].copied = true; // Set the copied state to true for the clicked result
             return updatedResults;
         });
         };
